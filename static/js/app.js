@@ -11,15 +11,15 @@ angular.module('rfp', [
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
-        templateUrl: 'partials/Dashboard.html',
+        templateUrl: 'static/partials/Dashboard.html',
         controller: 'DashboardCtrl'
     })
     .when('/Blog', {
-        templateUrl: 'partials/Blog-List.html',
+        templateUrl: 'static/partials/Blog-List.html',
         controller: 'BlogListCtrl'
     })
     .when('/Requests/:request_id', {
-        templateUrl: 'partials/Request-Detail.html', 
+        templateUrl: 'static/partials/Request-Detail.html', 
         controller: 'RequestDetailCtrl'
     })
     .otherwise({redirectTo: '/'})
