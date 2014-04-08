@@ -3,6 +3,18 @@
 /* Controllers */
 angular.module('rfp.controllers', [])
 
+    .controller('NavBarCtrl', ['$scope', '$location', function($scope, $location) {
+        
+        $scope.navBarActive = function(viewLocation) {
+            return viewLocation === $location.path();
+        };
+    }])
+
+    .controller('HomeCtrl', ['$scope', function($scope) {
+
+        $scope.title = 'Dashboard';
+    }])
+
     .controller('BlogCtrl', ['$scope', 'blog', function($scope, blog) {
         $scope.posts;
         $scope.status;
@@ -20,14 +32,7 @@ angular.module('rfp.controllers', [])
         }
     }])
 
-    .controller('NavBarCtrl', ['$scope', '$location', function($scope, $location) {
-        
-        $scope.navBarActive = function(viewLocation) {
-            return viewLocation === $location.path();
-        };
-    }])
-
-    .controller('DashboardCtrl', ['$scope', function($scope) {
+    .controller('SearchCtrl', ['$scope', function($scope) {
 
         $scope.title = 'Dashboard';
     }])
