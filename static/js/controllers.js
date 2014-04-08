@@ -1,25 +1,9 @@
 'use strict';
 
+/* Controllers */
 angular.module('rfp.controllers', [])
 
-    .controller('VisitorListCtrl', ['$scope', 'visitor', function($scope, visitor) {
-        $scope.visitors;
-        $scope.status;
-
-        getVisitors();
-
-        function getVisitors() {
-            visitor.getVisitors()
-                .success(function (data) {
-                    $scope.visitors = data;
-                })
-                .error(function (error) {
-                    $scope.status = 'Unable to load customer data: ' + error.message;
-                });
-        }
-    }])
-
-    .controller('BlogListCtrl', ['$scope', 'blog', function($scope, blog) {
+    .controller('BlogCtrl', ['$scope', 'blog', function($scope, blog) {
         $scope.posts;
         $scope.status;
 

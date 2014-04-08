@@ -1,7 +1,6 @@
 'use strict';
 
 /* Factories */
-
 angular.module('rfp.factories', [])
     .factory('blog', ['$http', function($http) {
 
@@ -42,16 +41,5 @@ angular.module('rfp.factories', [])
         };
 
         return data;
-    }])
-
-    .factory('question', ['$http', function($http) {
-
-        var data = {};
-
-        data.getQuestions = function() {
-	        return $http.get('http://api.rfp.io');
-        };
-
-	return data;
     }])
 ;

@@ -1,5 +1,6 @@
 'use strict';
 
+/* Application */
 angular.module('rfp', [
   'ngRoute',
   'rfp.filters',
@@ -8,20 +9,22 @@ angular.module('rfp', [
   'rfp.factories',
   'rfp.controllers'
 ])
-.config(['$routeProvider', function($routeProvider) {
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
-        templateUrl: 'static/partials/Dashboard.html',
-        controller: 'DashboardCtrl'
+        templateUrl: 'static/partials/Home.html',
+        controller: 'HomeCtrl'
     })
     .when('/Blog', {
-        templateUrl: 'static/partials/Blog-List.html',
-        controller: 'BlogListCtrl'
+        templateUrl: 'static/partials/Blog.html',
+        controller: 'BlogCtrl'
     })
-    .when('/Requests/:request_id', {
-        templateUrl: 'static/partials/Request-Detail.html', 
-        controller: 'RequestDetailCtrl'
+    .when('/Search', {
+        tempateUrl: 'static/partials/Search.html',
+        controller: 'SearchCtrl'
     })
     .otherwise({redirectTo: '/'})
   ;
+
+  $locationProvider.html5Mode(true);
 }]);

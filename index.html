@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="rfp">
     <head>
     <meta charset="utf-8">
     <title>Healthy Travel Gal - Resources for the Traveling Woman</title>
@@ -20,55 +20,9 @@
     </head>
 
     <body>
-
-        <header class="bar bar-nav">
-            <h1 class="title">Healthy Travel Gal</h1>
-        </header>
-
-        <nav class="bar bar-tab bar-footer">
-            <a class="tab-item active" href="/">
-                <span class="icon icon-home"></span><span class="tab-label">Home</span>
-            </a>
-            <a class="tab-item" href="/Search.html">
-                <span class="icon icon-search"></span><span class="tab-label">Search</span>
-            </a>
-            <a class="tab-item" href="/Blog.html">
-                <span class="icon icon-star-filled"></span><span class="tab-label">Blog</span>
-            </a>
-            <a class="tab-item" href="/Airports.html">
-                <span class="icon icon-list"></span><span class="tab-label">Aiports</span>
-            </a>
-        </nav>
-
-        <div class="content">
-            <div class="content-padded">
-                <h3>Welcome to On the Go.</h3>
-                <p>Let us know where you are:</p>
-            </div>
-            <ul class="table-view">
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="LAX-Details.html"><span class="badge badge-primary">1 mi</span>LAX (Los Angeles Intl.)</a>
-                </li>
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="HHR-Details.html"><span class="badge badge-primary">4 mi</span>HHR (Hawthorn Municipal)</a>
-                </li>
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="SMO-Details.html"><span class="badge badge-primary">6 mi</span>SMO (Santa Monica)</a>
-                </li>
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="CPM-Details.html"><span class="badge badge-primary">10 mi</span>CPM (Compton - Woodley)</a>
-                </li>
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="TOA-Details.html"><span class="badge badge-primary">11 mi</span>TOA (Torrance)</a>
-                </li>
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="EMT-Details.html"><span class="badge badge-primary">24 mi</span>EMT (El Monte)</a>
-                </li>
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="FUL-Details.html"><span class="badge badge-primary">25 mi</span>FUL (Fullerton Municipal)</a>
-                </li>
-            </ul>
-        </div>
+        
+        <div nav-bar></div>
+        <div ng-view></div>
 
         <script src="/vendor/angular/angular.js"></script>
         <script src="/vendor/angular/angular-route.js"></script>
