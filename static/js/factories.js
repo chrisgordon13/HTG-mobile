@@ -5,7 +5,7 @@
 angular.module('rfp.factories', [])
     .factory('blog', ['$http', function($http) {
 
-        var urlBase = 'https://www.googleapis.com/blogger/v3/blogs/210404798699886185/posts?key=AIzaSyA-1aYJiCoBYL4qEKA2VwSFnvdBFfh0hDU&callback=data';
+        var urlBase = 'https://www.googleapis.com/blogger/v3/blogs/210404798699886185/posts?key=AIzaSyA-1aYJiCoBYL4qEKA2VwSFnvdBFfh0hDU&callback=posts';
         var data = {};
 
         data.getPosts = function() {
