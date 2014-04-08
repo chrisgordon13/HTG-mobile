@@ -28,7 +28,7 @@ angular.module('rfp.controllers', [])
         function getPosts() {
             blog.getPosts()
                 .success(function(data) {
-                    $scope.posts = data;
+                    $scope.posts = data.items;
                 })
                 .error(function(error) {
                     $scope.status = 'Unable to load blog posts data: ' + error.message;
