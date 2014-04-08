@@ -20,7 +20,7 @@ angular.module('rfp', [
         controller: 'BlogCtrl'
     })
     .when('/Search', {
-        tempateUrl: 'static/partials/Search.html',
+        templateUrl: 'static/partials/Search.html',
         controller: 'SearchCtrl'
     })
     .otherwise({redirectTo: '/'})
