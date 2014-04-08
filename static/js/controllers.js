@@ -6,6 +6,7 @@ angular.module('rfp.controllers', [])
     .controller('NavBarCtrl', ['$scope', '$location', function($scope, $location) {
         
         $scope.navBarActive = function(viewLocation) {
+            console.log(viewLocation + ' : ' + $location.path());
             return viewLocation === $location.path();
         };
     }])
