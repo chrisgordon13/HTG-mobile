@@ -6,8 +6,7 @@ angular.module('rfp', [
   'rfp.services',
   'rfp.directives',
   'rfp.factories',
-  'rfp.controllers',
-  'ui.bootstrap'
+  'rfp.controllers'
 ])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
