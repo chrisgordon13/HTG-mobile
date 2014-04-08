@@ -18,7 +18,24 @@ angular.module('rfp.controllers', [])
                 });
         }
     }])
-    
+
+    .controller('BlogListCtrl', ['$scope', 'blog', function($scope, blog) {
+        $scope.posts;
+        $scope.status;
+
+        getPosts();
+
+        function getPosts() {
+            blog.getPosts()
+                .success(function(data) {
+                    $scope.posts = data;
+                })
+                .error(function(error) {
+                    $scope.status = 'Unable to load blog posts data: ' + error.message;
+                });
+        }
+    }])
+
     .controller('NavBarCtrl', ['$scope', '$location', function($scope, $location) {
         
         $scope.navBarActive = function(viewLocation) {
@@ -29,10 +46,6 @@ angular.module('rfp.controllers', [])
     .controller('DashboardCtrl', ['$scope', function($scope) {
 
         $scope.title = 'Dashboard';
-    }])
-
-    .controller('RequestListCtrl', ['$scope', function($scope) {
-
     }])
 
     .controller('RequestDetailCtrl', ['$scope', 'question', function($scope, question) {
@@ -49,32 +62,5 @@ angular.module('rfp.controllers', [])
                     $scope.status = 'Unable to load question data: ' + error.message;
                 });
         }
-    }])
-
-    .controller('ResponseListCtrl', ['$scope', function($scope) {
-
-    }])
-
-    .controller('ResponseDetailCtrl', ['$scope', function($scope) {
-
-        var response = {'PROPNAME':'Test Property'};
-        $scope.response = response;
-
-    }])
-
-    .controller('BuyerListCtrl', ['$scope', function($scope) {
-
-    }])
-
-    .controller('BuyerDetailCtrl', ['$scope', function($scope) {
-
-    }])
-
-    .controller('SupplierListCtrl', ['$scope', function($scope) {
-
-    }])
-
-    .controller('SupplierDetailCtrl', ['$scope', function($scope) {
-
     }])
 ;

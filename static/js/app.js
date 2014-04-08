@@ -15,37 +15,13 @@ angular.module('rfp', [
         templateUrl: 'partials/Dashboard.html',
         controller: 'DashboardCtrl'
     })
-    .when('/Requests', {
-        templateUrl: 'partials/Request-List.html',
-        controller: 'RequestListCtrl'
+    .when('/Blog', {
+        templateUrl: 'partials/Blog-List.html',
+        controller: 'BlogListCtrl'
     })
     .when('/Requests/:request_id', {
         templateUrl: 'partials/Request-Detail.html', 
         controller: 'RequestDetailCtrl'
-    })
-    .when('/Responses', {
-        templateUrl: 'partials/Response-List.html',
-        controller: 'ResponseListCtrl'
-    })
-    .when('/Responses/:response_id', {
-        templateUrl: 'partials/Response-Detail.html', 
-        controller: 'ResponseDetailCtrl'
-    })
-    .when('/Buyers', {
-        templateUrl: 'partials/Buyer-List.html',
-        controller: 'BuyerListCtrl'
-    })
-    .when('/Buyers/:buyer_id', {
-        templateUrl: 'partials/Buyer-Detail.html',
-        controller: 'BuyerDetailCtrl'
-    })
-    .when('/Suppliers', {
-        templateUrl: 'partials/Supplier-List.html',
-        controller: 'SupplierListCtrl'
-    })
-    .when('/Suppliers/:supplier_id', {
-        templateUrl: 'partials/Supplier-Detail.html',
-        controller: 'SupplierDetailCtrl'
     })
     .otherwise({redirectTo: '/'})
   ;
