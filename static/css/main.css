@@ -1,0 +1,12 @@
+[ng-cloak].splash {
+    display: block !important;
+}
+[ng-cloak] {display: none;}
+/* some naive styles for a splash page */
+.splash {
+    width: 100%;
+    height: 100%;
+    background: url(/static/img/bg.png) repeat;
+    background: blue;
+    color: white;
+}
