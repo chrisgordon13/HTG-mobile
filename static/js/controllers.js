@@ -30,6 +30,7 @@ angular.module('rfp.controllers', [])
                 .then(function(airport) {
                     $scope.airport = airport;
                     console.log(airport);
+                    console.log(airport.data[0]);
                     return airport;
                 });
         };
