@@ -16,11 +16,9 @@ angular.module('rfp.controllers', [])
         $scope.status;
 
         geo.getCoords().then(function(coords) {
-            //$scope.coords = coords;
-            //alert($scope.coords.latitude + ' : ' + $scope.coords.longitude);
             airport.getNearest(coords)
                 .success(function(data) {
-                    $scope.airport = data;
+                    $scope.airport = data[0];
                 })
                 .error(function(error) {
                     $scope.status = 'Unable to find an airport near you: ' + error.message;
