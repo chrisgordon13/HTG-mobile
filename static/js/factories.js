@@ -42,7 +42,7 @@ angular.module('rfp.factories', [])
         var urlBase = 'http://api.HealthTravelGal.com/Airports';
         var data = {};
 
-        data.getNearest(coords) {
+        data.getNearest(coords) = function() {
             return $http.get(urlBase + '?lat=' + coords.latitude.toFixed(5) + '&lon=' + coords.longitude.toFixed(5) + '&limit=1');
         };
 
@@ -68,7 +68,7 @@ angular.module('rfp.factories', [])
         };
 
         data.updateVisitor = function (visitor) {
-            return $http.put(urlBase + '/' + visitor.ID, visitor, authHeader)
+            return $http.put(urlBase + '/' + visitor.ID, visitor, authHeader);
         };
 
         data.deleteVisitor = function (id) {
