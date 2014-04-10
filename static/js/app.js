@@ -15,6 +15,10 @@ angular.module('rfp', [
         templateUrl: 'static/partials/Home.html',
         controller: 'HomeCtrl'
     })
+    .when('/Airport-Yes/:code', {
+        templateUrl: 'static/partials/Airport-Yes.html',
+        controller: 'AirportYesCtrl'
+    })
     .when('/Blog', {
         templateUrl: 'static/partials/Blog.html',
         controller: 'BlogCtrl'
@@ -25,6 +29,4 @@ angular.module('rfp', [
     })
     .otherwise({redirectTo: '/'})
   ;
-
-  //$locationProvider.html5Mode(true);
 }]);
