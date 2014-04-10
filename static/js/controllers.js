@@ -12,19 +12,21 @@ angular.module('rfp.controllers', [])
 
     .controller('HomeCtrl', ['$scope', 'geo', 'airport', function($scope, geo, airport) {
         $scope.title = 'Welcome to On the Go.';
+        $scope.coords;
         $scope.airport;
         $scope.status;
 
         geo.getCoords().then(function(coords) {
-            airport.getNearest(coords)
-                .success(function(data) {
-                    $scope.airport = data[0];
-                })
-                .error(function(error) {
-                    $scope.status = 'Unable to find an airport near you: ' + error.message;
-                });
+            $scope.coords = coords;
         });
 
+        airport.getNearest($scope.coords)
+            .success(function(data) {
+                $scope.airport = data[0];
+            })
+            .error(function(error) {
+                $scope.status = 'Unable to find an airport near you: ' + error.message;
+            });
     }])
 
     .controller('BlogCtrl', ['$scope', 'blog', function($scope, blog) {
