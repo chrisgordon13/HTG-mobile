@@ -15,7 +15,7 @@ angular.module('rfp.controllers', [])
         $scope.title = 'Dashboard';
         $scope.coords = geo.getCoords();
 
-        alert($scope.coords.latitude + ' : ' $scope.coords.longitude);
+        alert($scope.coords.latitude + ' : ' + $scope.coords.longitude);
     }])
 
     .controller('BlogCtrl', ['$scope', 'blog', function($scope, blog) {
