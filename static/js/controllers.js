@@ -48,7 +48,7 @@ angular.module('rfp.controllers', [])
         $scope.code = $routeParams.code;
     }])
 
-    .controller('AirportInCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+    .controller('AirportInCtrl', ['$scope', '$routeParams', 'airport', function($scope, $routeParams, airport) {
         $scope.code = $routeParams.code;
         $scope.terminals;
         $scope.status;
