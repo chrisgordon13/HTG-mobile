@@ -16,8 +16,8 @@ angular.module('rfp.controllers', [])
         $scope.airport;
         $scope.status;
 
-        geo.getCoords().then(function(coords) {
-            $scope.coords = coords;
+        $scope.coords = geo.getCoords().then(function(coords) {
+            return coords;
         });
 
         airport.getNearest($scope.coords)
