@@ -11,10 +11,11 @@ angular.module('rfp.controllers', [])
     }])
 
     .controller('HomeCtrl', ['$scope', 'geo', 'airport', function($scope, geo, airport) {
-        $scope.title = 'Welcome to On the Go.';
-        //$scope.coords;
-        //$scope.airport;
-        //$scope.status;
+        $scope.show     = false;
+        $scope.title    = 'Welcome to On the Go.';
+        $scope.coords;
+        $scope.airport;
+        $scope.status;
 
         var loadGeo = function() {
             return geo
@@ -35,27 +36,13 @@ angular.module('rfp.controllers', [])
         };
 
         loadGeo()
-            .then(loadAirport);
+            .then(loadAirport)
+            .finally(function() {
+                $scope.show = true
+            });
 
         $scope.coords = null;
         $scope.airport = null;
-
-        /*
-        $scope.coords = geo.getCoords().then(function(coords) {
-            console.log(coords);
-            return coords;
-        });
-
-        console.log($scope.coords);
-
-        airport.getNearest($scope.coords)
-            .success(function(data) {
-                $scope.airport = data[0];
-            })
-            .error(function(error) {
-                $scope.status = 'Unable to find an airport near you: ' + error.message;
-            });
-        */
     }])
 
     .controller('BlogCtrl', ['$scope', 'blog', function($scope, blog) {
