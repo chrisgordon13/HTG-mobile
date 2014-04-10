@@ -43,7 +43,7 @@ angular.module('rfp.factories', [])
         var data = {};
 
         data.getNearest(coords) {
-            return $http.get(urlBase + '?lat=' + coords.latitude.toFixed(5) + '&lon=' + coords.longitude.toFixed(5) + '&limit=1';
+            return $http.get(urlBase + '?lat=' + coords.latitude.toFixed(5) + '&lon=' + coords.longitude.toFixed(5) + '&limit=1');
         };
 
         return data;
