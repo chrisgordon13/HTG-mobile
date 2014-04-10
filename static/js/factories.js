@@ -39,7 +39,7 @@ angular.module('rfp.factories', [])
 
     .factory('airport', ['$http', function($http) {
 
-        var urlBase = 'http://api.HealthTravelGal.com/Airports;
+        var urlBase = 'http://api.HealthTravelGal.com/Airports';
         var data = {};
 
         data.getNearest(coords) {
