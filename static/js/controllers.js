@@ -10,13 +10,23 @@ angular.module('rfp.controllers', [])
         };
     }])
 
-    .controller('HomeCtrl', ['$scope', 'geo', function($scope, geo) {
+    .controller('HomeCtrl', ['$scope', 'geo', 'airport', function($scope, geo, airport) {
+        $scope.title = 'Welcome to On the Go.';
+        $scope.airport;
+        $scope.status;
 
-        $scope.title = 'Dashboard';
         geo.getCoords().then(function(coords) {
-            $scope.coords = coords;
-            alert($scope.coords.latitude + ' : ' + $scope.coords.longitude);
+            //$scope.coords = coords;
+            //alert($scope.coords.latitude + ' : ' + $scope.coords.longitude);
+            airport.getNearest(coords)
+                .success(function(data) {
+                    $scope.airport = data;
+                })
+                .error(function(error) {
+                    $scope.status = 'Unable to find an airport near you: ' + error.message;
+                });
         });
+
     }])
 
     .controller('BlogCtrl', ['$scope', 'blog', function($scope, blog) {

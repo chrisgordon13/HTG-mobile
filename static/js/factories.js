@@ -37,6 +37,18 @@ angular.module('rfp.factories', [])
         return geo;
     }])
 
+    .factory('airport', ['$http', function($http) {
+
+        var urlBase = 'http://api.HealthTravelGal.com/Airports;
+        var data = {};
+
+        data.getNearest(coords) {
+            return $http.get(urlBase + '?lat=' + coords.latitude.toFixed(5) + '&lon=' + coords.longitude.toFixed(5) + '&limit=1';
+        };
+
+        return data;
+    }])
+
     .factory('visitor', ['$http', function($http) {
 
         var urlBase = 'https://api.TripNanny.com/Visitors';
