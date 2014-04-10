@@ -29,7 +29,7 @@ angular.module('rfp.factories', [])
                     }
                 );
             } else {
-                def.reject('This device does not support geolocation.");
+                def.reject("This device does not support geolocation.");
             }
             return def.promise;
         }
