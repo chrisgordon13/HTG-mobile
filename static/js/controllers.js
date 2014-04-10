@@ -10,9 +10,12 @@ angular.module('rfp.controllers', [])
         };
     }])
 
-    .controller('HomeCtrl', ['$scope', function($scope) {
+    .controller('HomeCtrl', ['$scope', 'geo', function($scope, geo) {
 
         $scope.title = 'Dashboard';
+        $scope.coords = geo.getCoords();
+
+        console.log($scope.coords);
     }])
 
     .controller('BlogCtrl', ['$scope', 'blog', function($scope, blog) {

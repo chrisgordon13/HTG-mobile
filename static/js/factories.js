@@ -14,6 +14,23 @@ angular.module('rfp.factories', [])
         return data;
     }])
 
+    .factory('geo', [function() {
+        
+        return {
+            getCoords: function() {
+                if (navigator.geoLocation) {
+                    navigator.geoLocation.getCurrentPosition(
+                        function(position) {
+                            return position.coords;
+                        }
+                    );
+                } else {
+                    return {};
+                }
+            }
+        };
+    }])
+
     .factory('visitor', ['$http', function($http) {
 
         var urlBase = 'https://api.TripNanny.com/Visitors';
