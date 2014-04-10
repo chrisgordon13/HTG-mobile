@@ -17,6 +17,7 @@ angular.module('rfp.controllers', [])
         $scope.status;
 
         $scope.coords = geo.getCoords().then(function(coords) {
+            console.log(coords);
             return coords;
         });
 
