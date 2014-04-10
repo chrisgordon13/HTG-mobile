@@ -14,20 +14,24 @@ angular.module('rfp.factories', [])
         return data;
     }])
 
-    .factory('geo', [function() {
+    .factory('geo', ['$q', function($q) {
         
         var geo = {};
 
         geo.getCoords = function() {
+
+            var def = $q.defer();
+
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     function(position) {
-                        return position.coords;
+                        def.resolve(position.coords);
                     }
                 );
             } else {
-                return {};
+                def.reject('This device does not support geolocation.");
             }
+            return def.promise;
         }
 
         return geo;
