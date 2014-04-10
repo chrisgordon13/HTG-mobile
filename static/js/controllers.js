@@ -24,8 +24,9 @@ angular.module('rfp.controllers', [])
                     $scope.coords = coords;
                     return coords;
                 });
-        },
-        loadAirport = function(coords) {
+        };
+
+        var loadAirport = function(coords) {
             return airport
                 .getNearest(coords)
                 .then(function(airport) {
@@ -43,6 +44,11 @@ angular.module('rfp.controllers', [])
 
         $scope.coords = null;
         $scope.airport = null;
+    }])
+
+    .controller('AirportYesCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+        $scope.code = $routeParams.code;
+
     }])
 
     .controller('BlogCtrl', ['$scope', 'blog', function($scope, blog) {
