@@ -18,8 +18,8 @@ angular.module('rfp.factories', [])
         
         return {
             getCoords: function() {
-                if (navigator.geoLocation) {
-                    navigator.geoLocation.getCurrentPosition(
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
                         function(position) {
                             return position.coords;
                         }
