@@ -16,6 +16,30 @@ angular.module('rfp.controllers', [])
         $scope.airport;
         $scope.status;
 
+        var loadGeo = function() {
+            return geo
+                .getCoords()
+                .then(function(coords) {
+                    $scope.coords = coords;
+                    return coords;
+                });
+        },
+        loadAirport = function(coords) {
+            return airport
+                .getNearest(coords)
+                .then(function(airport) {
+                    $scope.airport = airport[0];
+                    return airport[0];
+                });
+        };
+
+        loadGeo()
+            .then(loadAirport);
+
+        $scope.coords = null;
+        $scope.airport = null;
+
+        /*
         $scope.coords = geo.getCoords().then(function(coords) {
             console.log(coords);
             return coords;
@@ -30,6 +54,7 @@ angular.module('rfp.controllers', [])
             .error(function(error) {
                 $scope.status = 'Unable to find an airport near you: ' + error.message;
             });
+        */
     }])
 
     .controller('BlogCtrl', ['$scope', 'blog', function($scope, blog) {
