@@ -13,7 +13,7 @@ angular.module('rfp.controllers', [])
     .controller('HomeCtrl', ['$scope', 'geo', function($scope, geo) {
 
         $scope.title = 'Dashboard';
-        $scope.coords = geo.getCoords();
+        $scope.coords = geo.getCoords;
 
         alert($scope.coords.latitude + ' : ' + $scope.coords.longitude);
     }])

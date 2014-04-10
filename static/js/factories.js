@@ -16,19 +16,21 @@ angular.module('rfp.factories', [])
 
     .factory('geo', [function() {
         
-        return {
-            getCoords: function() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(
-                        function(position) {
-                            return position.coords;
-                        }
-                    );
-                } else {
-                    return {};
-                }
+        var geo = {};
+
+        geo.getCoords = function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        return position.coords;
+                    }
+                );
+            } else {
+                return {};
             }
-        };
+        }
+
+        return geo;
     }])
 
     .factory('visitor', ['$http', function($http) {
