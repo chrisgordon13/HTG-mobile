@@ -1,8 +1,7 @@
         <div class="content" ng-controller="HomeCtrl">
             <div class="content-padded">
-                <h6>Welcome to On the Go.</h6>
-                <p>Are you at or near:</p>
-                <h5>{{ airport.name }}</h5>
+                <h4>Welcome to On the Go.</h4>
+                <p>Are you at or near <strong>{{ airport.name }}</strong>?</p>
                 <a href="/#Airport-Yes/{{ airport.code }}" class="btn btn-positive btn-block">I am</a>
                 <a href="/#Airport-No" class="btn btn-negative btn-block btn-outlined">I am not</a>
             </div>
