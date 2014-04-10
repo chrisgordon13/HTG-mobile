@@ -12,9 +12,9 @@ angular.module('rfp.controllers', [])
 
     .controller('HomeCtrl', ['$scope', 'geo', 'airport', function($scope, geo, airport) {
         $scope.title = 'Welcome to On the Go.';
-        $scope.coords;
-        $scope.airport;
-        $scope.status;
+        //$scope.coords;
+        //$scope.airport;
+        //$scope.status;
 
         var loadGeo = function() {
             return geo
