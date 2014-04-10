@@ -1,29 +1,9 @@
         <div class="content" ng-controller="HomeCtrl">
             <div class="content-padded">
-                <h3>Welcome to On the Go.</h3>
-                <p>Let us know where you are:</p>
+                <h4>Welcome to On the Go.</h4>
+                <p>It looks like you're near:</p>
+                <h3>{{ nearestAirport }}</h3>
             </div>
-            <ul class="table-view">
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="LAX-Details.html"><span class="badge badge-primary">1 mi</span>LAX (Los Angeles Intl.)</a>
-                </li>
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="HHR-Details.html"><span class="badge badge-primary">4 mi</span>HHR (Hawthorn Municipal)</a>
-                </li>
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="SMO-Details.html"><span class="badge badge-primary">6 mi</span>SMO (Santa Monica)</a>
-                </li>
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="CPM-Details.html"><span class="badge badge-primary">10 mi</span>CPM (Compton - Woodley)</a>
-                </li>
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="TOA-Details.html"><span class="badge badge-primary">11 mi</span>TOA (Torrance)</a>
-                </li>
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="EMT-Details.html"><span class="badge badge-primary">24 mi</span>EMT (El Monte)</a>
-                </li>
-                <li class="table-view-cell">
-                    <a class="navigate-right" href="FUL-Details.html"><span class="badge badge-primary">25 mi</span>FUL (Fullerton Municipal)</a>
-                </li>
-            </ul>
+            <a href="/#Airport-Yes" class="btn btn-positive btn-block">Yes I am</a>
+            <a href="/#Airport-No" class="btn btn-negative btn-block btn-outlined">No I am not</a>
         </div>
