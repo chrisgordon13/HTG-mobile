@@ -46,6 +46,10 @@ angular.module('rfp.factories', [])
             return $http.get(urlBase + '?lat=' + coords.latitude.toFixed(5) + '&lon=' + coords.longitude.toFixed(5) + '&limit=1');
         };
 
+        data.getTerminals = function(code) {
+            return $http.get(urlBase + '/' + code + '/Terminals');
+        };
+
         return data;
     }])
 

@@ -19,6 +19,10 @@ angular.module('rfp', [
         templateUrl: 'static/partials/Airport-Yes.html',
         controller: 'AirportYesCtrl'
     })
+    .when('/Airport-In/:code', {
+        templateUrl: 'static/partials/Airport-In.html',
+        controller: 'AirportInCtrl'
+    })
     .when('/Blog', {
         templateUrl: 'static/partials/Blog.html',
         controller: 'BlogCtrl'

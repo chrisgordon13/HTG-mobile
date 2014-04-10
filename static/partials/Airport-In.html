@@ -1,0 +1,12 @@
+        <div class="content" ng-controller="AirportInCtrl">
+            <div class="content-padded">
+                <p>What terminal are you in?</p>
+            </div>
+            <ul class="table-view">
+                <li class="table-view-cell media" ng-repeat="terminal in terminals">
+                    <a class="navigate-right" href="{{ post.url }}" target="_blank">
+                        <p>Terminal: {{ terminal.terminal }}</p>
+                    </a>
+                </li>
+            </ul>
+        </div>

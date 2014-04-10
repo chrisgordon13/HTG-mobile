@@ -12,7 +12,6 @@ angular.module('rfp.controllers', [])
 
     .controller('HomeCtrl', ['$scope', 'geo', 'airport', function($scope, geo, airport) {
         $scope.show     = false;
-        $scope.title    = 'Welcome to On the Go.';
         $scope.coords;
         $scope.airport;
         $scope.status;
@@ -31,7 +30,6 @@ angular.module('rfp.controllers', [])
                 .getNearest(coords)
                 .then(function(airport) {
                     $scope.airport = airport.data[0];
-                    console.log(airport.data[0]);
                     return airport;
                 });
         };
@@ -48,7 +46,24 @@ angular.module('rfp.controllers', [])
 
     .controller('AirportYesCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
         $scope.code = $routeParams.code;
+    }])
 
+    .controller('AirportInCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+        $scope.code = $routeParams.code;
+        $scope.terminals;
+        $scope.status;
+
+        getTerminals($scope.code);
+
+        function getTerminals(code) {
+            airport.getTerminals(code)
+                .success(function(data) {
+                    $scope.terminals = data;
+                })
+                .error(function(error) {
+                    $scope.status = 'Unable to load terminal data for this airport: ' + error.message;
+                });
+        }
     }])
 
     .controller('BlogCtrl', ['$scope', 'blog', function($scope, blog) {
@@ -69,8 +84,6 @@ angular.module('rfp.controllers', [])
     }])
 
     .controller('SearchCtrl', ['$scope', function($scope) {
-
-        $scope.title = 'Dashboard';
     }])
 
     .controller('RequestDetailCtrl', ['$scope', 'question', function($scope, question) {
