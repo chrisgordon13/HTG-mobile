@@ -86,7 +86,7 @@ angular.module('rfp.controllers', [])
     .controller('AirportsCtrl', ['$scope', 'geo', 'airport', function($scope, geo, airport) {
         $scope.show     = false;
         $scope.coords;
-        $scope.airport;
+        $scope.airports;
         $scope.status;
 
         var loadGeo = function() {
@@ -100,9 +100,9 @@ angular.module('rfp.controllers', [])
 
         var loadAirport = function(coords) {
             return airport
-                .getNearest(coords)
-                .then(function(airport) {
-                    $scope.airport = airport.data[0];
+                .getNears(coords)
+                .then(function(airports) {
+                    $scope.airports = airports;
                     return airport;
                 });
         };

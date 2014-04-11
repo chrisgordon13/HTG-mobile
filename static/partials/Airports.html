@@ -1,8 +1,14 @@
         <div class="content" ng-controller="AirportsCtrl" ng-show="show">
             <div class="content-padded">
-                <h4>Welcome to On the Go.</h4>
-                <p>Are you at or near <strong>{{ airport.name }}</strong>?</p>
-                <a href="/#Airport-Yes/{{ airport.code }}" class="btn btn-positive btn-block">I am</a>
-                <a href="/#Airports" class="btn btn-negative btn-block btn-outlined">I am not</a>
+                <p>Nearby airports:</p>
+            </div>
+            <div class="card"> 
+                <ul class="table-view"> 
+                    <li class="table-view-cell" ng-repeat="airport in airports"> 
+                        <a class="navigate-right" href="#Airports-In/{{ airport.code }}">
+                            {{ airport.name }} 
+                        </a> 
+                    </li> 
+                </ul> 
             </div>
         </div>

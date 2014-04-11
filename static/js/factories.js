@@ -42,6 +42,10 @@ angular.module('rfp.factories', [])
         var urlBase = 'http://api.HealthyTravelGal.com/Airports';
         var data = {};
 
+        data.getNears = function(coords) {
+            return $http.get(urlBase + '?lat=' + coords.latitude.toFixed(5) + '&lon=' + coords.longitude.toFixed(5) + '&limit=10');
+        };
+
         data.getNearest = function(coords) {
             return $http.get(urlBase + '?lat=' + coords.latitude.toFixed(5) + '&lon=' + coords.longitude.toFixed(5) + '&limit=1');
         };
