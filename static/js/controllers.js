@@ -102,7 +102,7 @@ angular.module('rfp.controllers', [])
             return airport
                 .getNears(coords)
                 .then(function(airports) {
-                    $scope.airports = airports;
+                    $scope.airports = airports.data;
                     return airport;
                 });
         };
