@@ -83,6 +83,40 @@ angular.module('rfp.controllers', [])
         }
     }])
 
+    .controller('AirportsCtrl', ['$scope', 'geo', 'airport', function($scope, geo, airport) {
+        $scope.show     = false;
+        $scope.coords;
+        $scope.airport;
+        $scope.status;
+
+        var loadGeo = function() {
+            return geo
+                .getCoords()
+                .then(function(coords) {
+                    $scope.coords = coords;
+                    return coords;
+                });
+        };
+
+        var loadAirport = function(coords) {
+            return airport
+                .getNearest(coords)
+                .then(function(airport) {
+                    $scope.airport = airport.data[0];
+                    return airport;
+                });
+        };
+
+        loadGeo()
+            .then(loadAirport)
+            .finally(function() {
+                $scope.show = true
+            });
+
+        $scope.coords = null;
+        $scope.airport = null;
+    }])
+
     .controller('SearchCtrl', ['$scope', function($scope) {
     }])
 
