@@ -2,12 +2,14 @@
             <div class="content-padded">
                 <p>What terminal are you in?</p>
             </div>
-            <ul class="table-view">
-                <li class="table-view-cell media" ng-repeat="terminal in terminals">
-                    <a class="navigate-right" href="#Airports/{{ terminal.airport_code }}/Terminals/{{ terminal.terminal }}" target="_blank">
-                        <span class="badge">{{ terminal.places }}</span>
-                        Terminal: {{ terminal.terminal }}
-                    </a>
-                </li>
-            </ul>
+            <div class="card"
+                <ul class="table-view">
+                    <li class="table-view-cell media" ng-repeat="terminal in terminals">
+                        <a class="navigate-right" href="#Airports/{{ terminal.airport_code }}/Terminals/{{ terminal.terminal }}" target="_blank">
+                            <span class="badge">{{ terminal.places }}</span>
+                            Terminal: {{ terminal.terminal }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
