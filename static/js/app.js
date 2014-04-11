@@ -19,15 +19,13 @@ angular.module('rfp', [
         templateUrl: 'static/partials/Airport-Yes.html',
         controller: 'AirportYesCtrl'
     })
-    .when('/Airport-No/:code', {
-        templateUrl: 'static/particals/Airport-No.html'
-    })
     .when('/Airport-In/:code', {
         templateUrl: 'static/partials/Airport-In.html',
         controller: 'AirportInCtrl'
     })
     .when('Airport-Out/:code', {
-        templateUrl: 'static/partials/Airport-Out.html'
+        templateUrl: 'static/partials/Airport-Out.html',
+        controller: 'AirportOutCtrl'
     })
     .when('/Blog', {
         templateUrl: 'static/partials/Blog.html',
@@ -40,6 +38,10 @@ angular.module('rfp', [
     .when('/Airports', {
         templateUrl: 'static/partials/Airports.html',
         controller: 'AirportsCtrl'
+    })
+    .when('/Airports/:code/Terminal/:terminal', {
+        templateUrl: 'static/partials/Places.html',
+        controller: 'PlacesCtrl'
     })
     .otherwise({redirectTo: '/'})
   ;

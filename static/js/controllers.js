@@ -66,6 +66,10 @@ angular.module('rfp.controllers', [])
         }
     }])
 
+    .controller('AirportOutCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+        $scope.code = $routeParams.code;
+    }])
+
     .controller('BlogCtrl', ['$scope', 'blog', function($scope, blog) {
         $scope.posts;
         $scope.status;
