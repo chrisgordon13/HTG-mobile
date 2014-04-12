@@ -141,7 +141,7 @@ angular.module('rfp.controllers', [])
     }])
 
     .controller('PlaceCtrl', ['$scope', '$routeParams', 'place', function($scope, $routeParams, place) {
-        $scode.id = $routeParams.id;
+        $scope.id = $routeParams.id;
         $scope.place;
         $scope.status;
 
