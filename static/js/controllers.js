@@ -145,7 +145,7 @@ angular.module('rfp.controllers', [])
         $scope.place;
         $scope.status;
 
-        getPlace($scode.id);
+        getPlace($scope.id);
 
         function getPlace(id) {
             place.getPlace(id)
