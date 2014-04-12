@@ -9,7 +9,7 @@ angular.module('rfp', [
   'rfp.factories',
   'rfp.controllers'
 ])
-.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
         templateUrl: 'static/partials/Home.html',
@@ -30,10 +30,6 @@ angular.module('rfp', [
     .when('/Blog', {
         templateUrl: 'static/partials/Blog.html',
         controller: 'BlogCtrl'
-    })
-    .when('/Search', {
-        templateUrl: 'static/partials/Search.html',
-        controller: 'SearchCtrl'
     })
     .when('/Airports', {
         templateUrl: 'static/partials/Airports.html',
