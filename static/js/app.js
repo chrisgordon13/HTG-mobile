@@ -39,6 +39,10 @@ angular.module('rfp', [
         templateUrl: 'static/partials/Places.html',
         controller: 'PlacesCtrl'
     })
+    .when('/Places/:id', {
+        templateUrl: 'static/partials/Place.html',
+        controller: 'PlaceCtrl'
+    })
     //.otherwise({redirectTo: '/'})
   ;
 }]);

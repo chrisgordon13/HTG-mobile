@@ -139,4 +139,22 @@ angular.module('rfp.controllers', [])
                 });
         }
     }])
+
+    .controller('PlaceCtrl', ['$scope', '$routeParams', 'place', function($scope, $routeParams, place) {
+        $scode.id = $routeParams.id;
+        $scope.place;
+        $scope.status;
+
+        getPlace($scode.id);
+
+        function getPlace(id) {
+            place.getPlace(id)
+                .success(function(data) {
+                    $scope.place = data;
+                })
+                .error(function(error) {
+                    $scope.status = 'Unable to load place: ' + error.message;
+                });
+        }
+    }])
 ;

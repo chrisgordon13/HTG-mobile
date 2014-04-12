@@ -40,7 +40,7 @@ angular.module('rfp.factories', [])
     .factory('airport', ['$http', function($http) {
 
         var urlBase = 'http://api.HealthyTravelGal.com/Airports';
-        var data = {};
+        var data    = {};
 
         data.getNears = function(coords) {
             return $http.get(urlBase + '?lat=' + coords.latitude.toFixed(5) + '&lon=' + coords.longitude.toFixed(5) + '&limit=10');
@@ -56,6 +56,18 @@ angular.module('rfp.factories', [])
 
         data.getPlaces = function(code, terminal) {
             return $http.get(urlBase + '/' + code + '/Terminals/' + terminal + '/Places');
+        };
+
+        return data;
+    }])
+
+    .factory('place', ['$http', function($http) {
+
+        var urlBase = 'http://api.HealthyTravelGal.com/Places';
+        var data    = {};
+
+        data.getPlace = function(id) {
+            return $http.get(urlBase + '/' + id);
         };
 
         return data;
