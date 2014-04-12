@@ -9,9 +9,9 @@ angular.module('rfp', [
   'rfp.factories',
   'rfp.controllers'
 ])
-.config(['$routeProvider', '$location', function($routeProvider, $location) {
+.config(['$routeProvider', function($routeProvider) {
 
-  alert($location.path());
+  alert(window.location);
   $routeProvider
     .when('/', {
         templateUrl: 'static/partials/Home.html',
