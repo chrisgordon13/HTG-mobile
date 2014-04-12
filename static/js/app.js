@@ -43,6 +43,6 @@ angular.module('rfp', [
         templateUrl: 'static/partials/Places.html',
         controller: 'PlacesCtrl'
     })
-    .otherwise({redirectTo: '/'})
+    //.otherwise({redirectTo: '/'})
   ;
 }]);
