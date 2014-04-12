@@ -36,7 +36,7 @@ angular.module('rfp', [
         controller: 'AirportsCtrl'
     })
     .when('/Airports/:code/Terminal/:terminal', {
-        templateUrl: 'static/partials/Places.html',
+        template: 'Places Controller Called',
         controller: 'PlacesCtrl'
     })
     //.otherwise({redirectTo: '/'})
