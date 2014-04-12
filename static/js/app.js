@@ -10,8 +10,6 @@ angular.module('rfp', [
   'rfp.controllers'
 ])
 .config(['$routeProvider', function($routeProvider) {
-
-  alert(window.location);
   $routeProvider
     .when('/', {
         templateUrl: 'static/partials/Home.html',
@@ -37,8 +35,8 @@ angular.module('rfp', [
         templateUrl: 'static/partials/Airports.html',
         controller: 'AirportsCtrl'
     })
-    .when('/Airports/:code/Terminal/:terminal', {
-        template: 'Places Controller Called',
+    .when('/Airports/:code/Terminals/:terminal', {
+        templateUrl: 'static/partials/Places.html',
         controller: 'PlacesCtrl'
     })
     //.otherwise({redirectTo: '/'})
