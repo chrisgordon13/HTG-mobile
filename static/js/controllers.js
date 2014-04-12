@@ -134,7 +134,7 @@ angular.module('rfp.controllers', [])
                 .success(function(data) {
                     $scope.places = data;
                 })
-                .error(function((error) {
+                .error(function(error) {
                     $scope.status = 'Unable to load places for this terminal: ' + error.message;
                 });
         }
