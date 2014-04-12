@@ -54,6 +54,10 @@ angular.module('rfp.factories', [])
             return $http.get(urlBase + '/' + code + '/Terminals');
         };
 
+        data.getPlaces = function(code, terminal) {
+            return $http.get(urlBase + '/' + code + '/Terminals/' + terminal + '/Places');
+        };
+
         return data;
     }])
 

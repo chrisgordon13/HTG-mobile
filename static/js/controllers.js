@@ -121,21 +121,21 @@ angular.module('rfp.controllers', [])
         $scope.airport = null;
     }])
 
-    .controller('SearchCtrl', ['$scope', function($scope) {
-    }])
+    .controller('PlacesCtrl', ['$scope', '$routeParams', 'airport', function($scope, $routeParams, airport) {
+        $scope.code     = $routeParams.code;
+        $scope.terminal = $routeParams.terminal;
+        $scope.places;
+        $scope.status;
 
-    .controller('RequestDetailCtrl', ['$scope', 'question', function($scope, question) {
-        $scope.questions;
+        getPlaces($scope.code, $scope.terminal);
 
-        getQuestions();
-
-        function getQuestions() {
-            question.getQuestions()
-                .success(function (data) {
-                        $scope.questions = data;
+        function getPlaces(code, terminal) {
+            airport.getPlaces(code, terminal)
+                .success(function(data) {
+                    $scope.places = data;
                 })
-                .error (function (error) {
-                    $scope.status = 'Unable to load question data: ' + error.message;
+                .error(function((error) {
+                    $scope.status = 'Unable to load places for this terminal: ' + error.message;
                 });
         }
     }])
