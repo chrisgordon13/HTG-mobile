@@ -39,7 +39,7 @@ angular.module('rfp', [
         templateUrl: 'static/partials/Places.html',
         controller: 'PlacesCtrl'
     })
-    .when('/Places/Typee/:type', {
+    .when('/Places/Type/:type', {
         templateUrl: 'static/partials/Places.html',
         controller: 'PlacesByTypeCtrl'
     })

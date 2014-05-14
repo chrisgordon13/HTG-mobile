@@ -140,6 +140,10 @@ angular.module('rfp.controllers', [])
         }
     }])
 
+    .controller('PlacesByTypeCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+        $scope.code = $routeParams.code;
+    }])
+
     .controller('PlaceCtrl', ['$scope', '$routeParams', 'place', function($scope, $routeParams, place) {
         $scope.id = $routeParams.id;
         $scope.place;
