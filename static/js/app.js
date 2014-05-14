@@ -24,7 +24,7 @@ angular.module('rfp', [
         templateUrl: 'static/partials/Airport-In.html',
         controller: 'AirportInCtrl'
     })
-    .when('Airport-Out/:code', {
+    .when('/Airport-Out/:code', {
         templateUrl: 'static/partials/Airport-Out.html',
         controller: 'AirportOutCtrl'
     })
