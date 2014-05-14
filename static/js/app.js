@@ -9,7 +9,8 @@ angular.module('rfp', [
   'rfp.factories',
   'rfp.controllers'
 ])
-.config(['$routeProvider', function($routeProvider) {
+.config(['$logProvider', '$routeProvider', function($logProvider, $routeProvider) {
+  $logProvider.debugEnabled(true);
   $routeProvider
     .when('/', {
         templateUrl: 'static/partials/Home.html',
