@@ -1,0 +1,11 @@
+        <div class="content" ng-controller="PlacesByTypeCtrl">
+            <div class="card">
+                <ul class="table-view">
+                    <li class="table-view-cell" ng-repeat="place in places">
+                        <a class="navigate-right" href="#Places/{{ place.id }}">
+                            {{ place.name }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
