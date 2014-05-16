@@ -67,7 +67,7 @@ angular.module('rfp.factories', [])
         var data    = {};
 
         data.getByType = function(type) {
-            return $http.get(urlBase + '/?type' + type);
+            return $http.get(urlBase + '/?type=' + type);
         };
 
         return data;
