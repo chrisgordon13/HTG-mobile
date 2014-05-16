@@ -143,8 +143,22 @@ angular.module('rfp.controllers', [])
         }
     }])
 
-    .controller('PlacesByTypeCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
-        $scope.code = $routeParams.code;
+    .controller('PlacesByTypeCtrl', ['$scope', '$routeParams', 'places', function($scope, $routeParams, places) {
+        $scope.type = $routeParams.type;
+        $scope.places;
+        $scope.status;
+
+        getPlaces($scope.type);
+
+        function getPlaces(type) {
+            places.getByType(type)
+                .success(function(data) {
+                    $scope.places = data;
+                })
+                .error(function(error) {
+                    $scope.status = 'Unable to load places for this type: ' + error.message;
+                });
+        }
     }])
 
     .controller('PlaceCtrl', ['$scope', '$routeParams', 'place', function($scope, $routeParams, place) {

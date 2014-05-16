@@ -41,7 +41,7 @@ angular.module('rfp', [
         controller: 'PlacesCtrl'
     })
     .when('/Places/Type/:type', {
-        templateUrl: 'static/partials/Places.html',
+        templateUrl: 'static/partials/PlacesByType.html',
         controller: 'PlacesByTypeCtrl'
     })
     .when('/Places/:id', {

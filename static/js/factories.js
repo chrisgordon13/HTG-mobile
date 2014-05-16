@@ -61,6 +61,18 @@ angular.module('rfp.factories', [])
         return data;
     }])
 
+    .factory('places', ['$http', function($http) {
+
+        var urlBase = 'http://api.HealthyTravelGal.com/Places';
+        var data    = {};
+
+        data.getByType = function(type) {
+            return $http.get(urlBase + '?type' + type);
+        };
+
+        return data;
+    }])
+
     .factory('place', ['$http', function($http) {
 
         var urlBase = 'http://api.HealthyTravelGal.com/Places';
